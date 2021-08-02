@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Loading from "../components/Loading";
 import LoginButtons from "../components/LoginButtons";
 import { Link } from "react-router-dom";
+import config from "../../config";
 import axios from "axios";
 
 class SignUp extends Component {
@@ -38,7 +39,7 @@ class SignUp extends Component {
     this.setState({ ...this.state, loading: true });
     try {
       await axios({
-        url: "https://authenticate-app-j.herokuapp.com/api/user/sign-up",
+        url: `${config.api}/api/user/sign-up`,
         method: "post",
         data: this.state.formValues,
       });

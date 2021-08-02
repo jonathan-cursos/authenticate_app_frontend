@@ -3,7 +3,7 @@ import Loading from "../components/Loading";
 import LoginButtons from "../components/LoginButtons";
 import { Link } from "react-router-dom";
 import axios from "axios";
-
+import config from "../../config";
 class Login extends Component {
   constructor(props) {
     super(props);
@@ -32,7 +32,7 @@ class Login extends Component {
     this.setState({ ...this.state, loading: true });
     try {
       const response = await axios({
-        url: "https://authenticate-app-j.herokuapp.com/api/user/sign-in",
+        url: `${config.api}/api/user/sign-in`,
         method: "post",
         auth: {
           username: this.state.formValues.email,
