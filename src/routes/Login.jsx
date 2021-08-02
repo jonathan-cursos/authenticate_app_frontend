@@ -32,7 +32,7 @@ class Login extends Component {
     this.setState({ ...this.state, loading: true });
     try {
       const response = await axios({
-        url: "http://localhost:3000/api/user/sign-in",
+        url: "https://authenticate-app-j.herokuapp.com/api/user/sign-in",
         method: "post",
         auth: {
           username: this.state.formValues.email,

@@ -38,7 +38,7 @@ class SignUp extends Component {
     this.setState({ ...this.state, loading: true });
     try {
       await axios({
-        url: "http://localhost:3000/api/user/sign-up",
+        url: "https://authenticate-app-j.herokuapp.com/api/user/sign-up",
         method: "post",
         data: this.state.formValues,
       });
