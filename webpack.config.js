@@ -50,7 +50,7 @@ module.exports = {
       filename: "assets/[name].css",
     }),
     new HtmlWebpackPlugin({
-      template: "./public/index.html",
+      template: "./src/public/index.html",
       filename: "index.html",
     }),
   ],
