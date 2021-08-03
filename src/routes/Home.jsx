@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import config from "../../config";
+import config from "../config";
 
 class Home extends Component {
   constructor() {
@@ -19,7 +19,7 @@ class Home extends Component {
         .split("; ")
         .find((row) => row.startsWith("token="))
         .split("=")[1];
-      const response = await axios.get(`${config.api}/api/user/${cookieA}`);
+      const response = await axios.get(`http://localhost:3000/api/user/${cookieA}`);
 
       this.setState({
         ...this.state,
@@ -37,6 +37,7 @@ class Home extends Component {
   };
 
   render() {
+    console.log(this.state)
     return (
       <>
         <h2 className="home__title">

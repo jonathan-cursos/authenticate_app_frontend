@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Loading from "../components/Loading";
 import LoginButtons from "../components/LoginButtons";
 import { Link } from "react-router-dom";
-import config from "../../config";
+import config from "../config";
 import axios from "axios";
 
 class SignUp extends Component {

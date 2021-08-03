@@ -3,7 +3,7 @@ import Loading from "../components/Loading";
 import LoginButtons from "../components/LoginButtons";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import config from "../../config";
+import config from "../config";
 class Login extends Component {
   constructor(props) {
     super(props);
