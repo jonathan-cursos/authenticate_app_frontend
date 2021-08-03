@@ -12,7 +12,7 @@ const oAuth2Strategy = new OAuth2Strategy(
     tokenURL: GOOGLE_TOKEN_URL,
     clientID: google.clientId,
     clientSecret: google.clientSecret,
-    callbackURL: "http://localhost:3001/auth/google/callback",
+    callbackURL: "https://authenticate-app-frontend.herokuapp.com/auth/google/callback",
       // "https://authenticate-app-j.herokuapp.com/api/user/auth/google/callback",
       // "http://localhost:3000/api/user/auth/google/callback",
   },
@@ -20,7 +20,7 @@ const oAuth2Strategy = new OAuth2Strategy(
     try {
       const response = await axios({
         // url: "https://authenticate-app-j.herokuapp.com/api/user/sign-provider",
-        url: "http://localhost:3000/api/user/sign-provider",
+        url: "https://authenticate-app-j.herokuapp.com/api/user/sign-provider",
         method: "post",
         data: {
           firstName: profile.firstName,

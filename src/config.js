@@ -1,4 +1,4 @@
 export default {
   // api: "https://authenticate-app-j.herokuapp.com",
-  api: "http://localhost:3001",
+  api: "https://authenticate-app-frontend.herokuapp.com",
 };
