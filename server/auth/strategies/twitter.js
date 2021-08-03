@@ -9,13 +9,15 @@ const TwitterStrategy = new Strategy(
     consumerKey: config.twitter.consumerApiKey,
     consumerSecret: config.twitter.consumerApiSecret,
     callbackURL:
-      "/",
+      "https://authenticate-app-frontend.herokuapp.com/auth/twitter/callback",
+      // "http://localhost:3001/auth/twitter/callback",
     includeEmail: true,
   },
   async function (token, tokenSecret, profile, done) {
     try {
       const response = await axios({
         url: "https://authenticate-app-j.herokuapp.com/api/user/sign-provider",
+        // url: "http://localhost:3000/api/user/sign-provider",
         method: "post",
         data: {
           firstName: profile.displayName,
@@ -24,7 +26,7 @@ const TwitterStrategy = new Strategy(
             "emails.0.value",
             `${profile.username}@twitter.com`
           ),
-          password: profile.id,
+          password: profile.id.toString(),
         },
       });
       if (!response.data) {

@@ -6,21 +6,21 @@ const LoginButtons = () => {
   return (
     <>
       <a
-        href={`${config.api}/auth/google`}
+        href={`${config.api}/api/user/auth/google`}
         className="social__button google"
       >
         <FaGoogle className="btn__icon" />
         Enter with Google
       </a>
       <a
-        href={`${config.api}/auth/facebook`}
+        href={`${config.api}/api/user/auth/facebook`}
         className="social__button fb"
       >
         <FaFacebookF className="btn__icon" />
         Enter with Facebook
       </a>
       <a
-        href={`${config.api}/auth/twitter`}
+        href={`${config.api}/api/user/auth/twitter`}
         className="social__button tt"
       >
         <FaTwitter className="btn__icon" />
