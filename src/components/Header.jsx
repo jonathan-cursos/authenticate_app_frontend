@@ -3,7 +3,7 @@ import React from "react";
 const Header = () => {
   return (
     <header>
-      <h1>AUTHENTICATE APP</h1>
+      <h1>AUTHENTICATE APPs</h1>
     </header>
   );
 };
