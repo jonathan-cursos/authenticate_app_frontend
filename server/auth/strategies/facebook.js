@@ -7,9 +7,7 @@ const FacebookStrategy = new Strategy(
   {
     clientID: facebook.clientAppId,
     clientSecret: facebook.clientAppSecret,
-    // callbackURL: "https://twitter.com/jonathangg_03",
-    callbackURL:
-      "/",
+    callbackURL: "https://authenticate-app-frontend.herokuapp.com/auth/facebook/callback",
     profileFields: ["id", "email", "displayName"],
   },
   async function (accessToken, refreshToken, profile, done) {
