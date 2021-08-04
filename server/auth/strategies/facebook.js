@@ -8,9 +8,10 @@ const FacebookStrategy = new Strategy(
     clientID: facebook.clientAppId,
     clientSecret: facebook.clientAppSecret,
     callbackURL: "https://authenticate-app-frontend.herokuapp.com/auth/facebook/callback",
-    profileFields: ["id", "email", "displayName"],
+    profileFields: ["id", "displayName" ,"email"],
   },
   async function (accessToken, refreshToken, profile, done) {
+    console.log(profile)
     try {
       const email = profile.email
         ? profile.email
