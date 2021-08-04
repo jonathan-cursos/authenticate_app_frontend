@@ -20,7 +20,7 @@ const FacebookStrategy = new Strategy(
         url: "https://authenticate-app-j.herokuapp.com/api/user/sign-provider",
         method: "post",
         data: {
-          firstName: profile.name,
+          firstName: profile.displayName,
           email: email,
           password: profile.id,
         },
