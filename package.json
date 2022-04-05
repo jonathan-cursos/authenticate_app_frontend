@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "nodemon ./server/index.js",
     "postinstall": "webpack --mode production",
-    "start": "node ./server/index.js"
+    "start": "node ./server/index.js",
+    "build": "webpack --mode production"
   },
   "keywords": [],
   "author": "",
