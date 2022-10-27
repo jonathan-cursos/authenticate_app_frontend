@@ -3,7 +3,7 @@
 Aplicación en la que probamos diferentes estrategias de Passport.js, y una vez
 que ingresamos, nos muestra nuestro nombre, y correo o nombre de usuario.
 
-[![Authenticate app](https://dav-dev.com/assets/projects/authenticate.jpg 'Authenticate app')](https://dav-dev.com/assets/projects/authenticate.jpg 'Authenticate app')
+[![Authenticate app](https://res.cloudinary.com/dklpyhteh/image/upload/v1661742489/Portfolio/authenticate_ax8jgq.jpg 'Authenticate app')](https://res.cloudinary.com/dklpyhteh/image/upload/v1661742489/Portfolio/authenticate_ax8jgq.jpg 'Authenticate app')
 
 ## Backend
 
