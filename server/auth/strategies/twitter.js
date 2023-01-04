@@ -16,7 +16,7 @@ const TwitterStrategy = new Strategy(
   async function (token, tokenSecret, profile, done) {
     try {
       const response = await axios({
-        url: 'https://authenticate-app-full.onrender.com/api/user/sign-provider',
+        url: 'https://authenticate-app-basic-strategy.onrender.com/api/user/sign-provider',
         // url: "http://localhost:3000/api/user/sign-provider",
         method: 'post',
         data: {

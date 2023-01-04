@@ -16,7 +16,7 @@ const FacebookStrategy = new Strategy(
     try {
       const email = profile.email ? profile.email : `${profile.id}@facebook.com`
       const response = await axios({
-        url: 'https://authenticate-app-full.onrender.com/api/user/sign-provider',
+        url: 'https://authenticate-app-basic-strategy.onrender.com/api/user/sign-provider',
         method: 'post',
         data: {
           firstName: profile.displayName,

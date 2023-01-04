@@ -19,7 +19,7 @@ const oAuth2Strategy = new OAuth2Strategy(
     try {
       const response = await axios({
         // url: "https://authenticate-app-j.herokuapp.com/api/user/sign-provider",
-        url: 'https://authenticate-app-full.onrender.com/api/user/sign-provider',
+        url: 'https://authenticate-app-basic-strategy.onrender.com/api/user/sign-provider',
         method: 'post',
         data: {
           firstName: profile.firstName,
