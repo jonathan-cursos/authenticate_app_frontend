@@ -1,23 +1,23 @@
-import React, { Component } from "react";
-import Loading from "../components/Loading";
-import LoginButtons from "../components/LoginButtons";
-import { Link } from "react-router-dom";
-import config from "../config";
-import axios from "axios";
+import React, { Component } from 'react'
+import Loading from '../components/Loading'
+import LoginButtons from '../components/LoginButtons'
+import { Link } from 'react-router-dom'
+import config from '../config'
+import axios from 'axios'
 
 class SignUp extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       loading: false,
       error: null,
       formValues: {
-        firstName: "",
-        lastName: "",
-        email: "",
-        password: "",
-      },
-    };
+        firstName: '',
+        lastName: '',
+        email: '',
+        password: ''
+      }
+    }
   }
 
   handleChangeFormValues = (event) => {
@@ -25,79 +25,79 @@ class SignUp extends Component {
       ...this.state,
       formValues: {
         ...this.state.formValues,
-        [event.target.name]: event.target.value,
-      },
-    });
-  };
+        [event.target.name]: event.target.value
+      }
+    })
+  }
 
   handleLogin = () => {
-    this.props.history.push("/");
-  };
+    this.props.history.push('/')
+  }
 
   handleSignUp = async (event) => {
-    event.preventDefault();
-    this.setState({ ...this.state, loading: true });
+    event.preventDefault()
+    this.setState({ ...this.state, loading: true })
     try {
       await axios({
-        url: `${config.api}/api/user/sign-up`,
-        method: "post",
-        data: this.state.formValues,
-      });
-      this.setState({ ...this.state, loading: false });
-      this.props.history.push("/");
-      location.reload();
+        url: `${config.extApi}/api/user/sign-up`,
+        method: 'post',
+        data: this.state.formValues
+      })
+      this.setState({ ...this.state, loading: false })
+      this.props.history.push('/')
+      location.reload()
     } catch (error) {
-      this.setState({ ...this.state, loading: false, error: error });
+      this.setState({ ...this.state, loading: false, error: error })
     }
-  };
+  }
 
   render() {
     return (
       <>
-        <form action="" onSubmit={this.handleSignUp}>
-          <label htmlFor="">First name:</label>
+        <form action='' onSubmit={this.handleSignUp}>
+          <label htmlFor=''>First name:</label>
           <input
-            type="text"
+            type='text'
             value={this.state.formValues.firstName}
-            name="firstName"
+            name='firstName'
             required
             onChange={this.handleChangeFormValues}
           />
-          <label htmlFor="">Last name:</label>
+          <label htmlFor=''>Last name:</label>
           <input
-            type="text"
-            name="lastName"
+            type='text'
+            name='lastName'
             required
             value={this.state.formValues.lastName}
             onChange={this.handleChangeFormValues}
           />
-          <label htmlFor="">Email:</label>
+          <label htmlFor=''>Email:</label>
           <input
-            type="email"
-            name="email"
+            type='email'
+            name='email'
             required
             value={this.state.formValues.email}
             onChange={this.handleChangeFormValues}
           />
-          <label htmlFor="">Password:</label>
+          <label htmlFor=''>Password:</label>
           <input
-            type="password"
-            name="password"
+            type='password'
+            name='password'
             required
             value={this.state.formValues.password}
             onChange={this.handleChangeFormValues}
           />
-          <button type="submit">Sign up</button>
+          <button type='submit'>Sign up</button>
           <LoginButtons />
-          <p className="invite__text">
+          <p className='invite__text'>
             You already have an account?
-            <Link to="/">Log in</Link>
+            <Link to='/'>Log in</Link>
           </p>
         </form>
         {this.state.loading && <Loading />}
       </>
-    );
+    )
   }
 }
 
-export default SignUp;
+export default SignUp

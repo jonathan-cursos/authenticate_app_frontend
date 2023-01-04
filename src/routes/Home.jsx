@@ -19,7 +19,7 @@ class Home extends Component {
         .split('; ')
         .find((row) => row.startsWith('token='))
         .split('=')[1]
-      const response = await axios.get(`${config.api}/api/user/${cookieA}`)
+      const response = await axios.get(`${config.extApi}/api/user/${cookieA}`)
 
       this.setState({
         ...this.state,
