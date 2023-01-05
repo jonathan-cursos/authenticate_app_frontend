@@ -10,14 +10,12 @@ const TwitterStrategy = new Strategy(
     consumerSecret: config.twitter.consumerApiSecret,
     callbackURL:
       'https://authenticate-app-full.onrender.com/auth/twitter/callback',
-    // "http://localhost:3001/auth/twitter/callback",
     includeEmail: true
   },
   async function (token, tokenSecret, profile, done) {
     try {
       const response = await axios({
         url: 'https://authenticate-app-basic-strategy.onrender.com/api/user/sign-provider',
-        // url: "http://localhost:3000/api/user/sign-provider",
         method: 'post',
         data: {
           firstName: profile.displayName,
