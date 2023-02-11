@@ -4,7 +4,7 @@
   "description": "",
   "main": "./server/index.js",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development nodemon ./server/index.js",
+    "dev": "npm run build && cross-env NODE_ENV=development nodemon ./server/index.js",
     "postinstall": "webpack --mode production",
     "start": "node ./server/index.js",
     "build": "webpack --mode production"
