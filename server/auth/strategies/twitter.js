@@ -8,14 +8,13 @@ const TwitterStrategy = new Strategy(
   {
     consumerKey: config.twitter.consumerApiKey,
     consumerSecret: config.twitter.consumerApiSecret,
-    callbackURL:
-      'https://authenticate-app-full.onrender.com/auth/twitter/callback',
+    callbackURL: '/auth/twitter/callback',
     includeEmail: true
   },
   async function (token, tokenSecret, profile, done) {
     try {
       const response = await axios({
-        url: 'https://authenticate-app-basic-strategy.onrender.com/api/user/sign-provider',
+        url: `${process.env.EXTERNAL_API}/api/user/sign-provider`,
         method: 'post',
         data: {
           firstName: profile.displayName,

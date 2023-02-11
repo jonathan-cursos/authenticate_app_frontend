@@ -7,8 +7,7 @@ const FacebookStrategy = new Strategy(
   {
     clientID: facebook.clientAppId,
     clientSecret: facebook.clientAppSecret,
-    callbackURL:
-      'https://authenticate-app-full.onrender.com/auth/facebook/callback',
+    callbackURL: '/auth/facebook/callback',
     profileFields: ['id', 'displayName', 'email']
   },
   async function (accessToken, refreshToken, profile, done) {
@@ -16,7 +15,7 @@ const FacebookStrategy = new Strategy(
     try {
       const email = profile.email ? profile.email : `${profile.id}@facebook.com`
       const response = await axios({
-        url: 'https://authenticate-app-basic-strategy.onrender.com/api/user/sign-provider',
+        url: `${process.env.EXTERNAL_API}/api/user/sign-provider`,
         method: 'post',
         data: {
           firstName: profile.displayName,
