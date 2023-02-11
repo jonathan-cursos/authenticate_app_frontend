@@ -37,7 +37,6 @@ class Home extends Component {
   }
 
   render() {
-    console.log(this.state)
     return (
       <>
         <h2 className='home__title'>
